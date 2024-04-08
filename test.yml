@@ -1,9 +1,7 @@
 name: APOSNF-LOIS-QS
 on:
-  workflow_dispatch: null
   push:
-    branches:
-      - main
+  workflow_dispatch:
 permissions:
   contents: write
 env:
