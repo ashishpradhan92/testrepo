@@ -1,0 +1,26 @@
+name: APOSNF-LOIS-QS
+'on':
+  workflow_dispatch: null
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+env:
+ env: 'dev'
+jobs:
+ SmokeTest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call environment-specific workflow
+        run: |
+          if [ $env == 'dev' ]; then
+            run:|
+          echo "I am Anil"
+          elif [ $env == 'test' ]; then
+           run:|
+          echo "DemoHelp"
+          else
+            echo "Unknown environment"
+            exit 1
+          fi
