@@ -1,11 +1,15 @@
 name: Reusable workflow 1
 on: 
   workflow_call:
-
+  workflow_dispatch:
 jobs:
   run-job1:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        with:
+            repository: 'ashishpradhan92/testrepo'
       - name : write someting to log
         run: |
           echo "I am Anil"
