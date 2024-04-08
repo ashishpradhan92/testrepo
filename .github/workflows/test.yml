@@ -1,0 +1,17 @@
+name: APOSNF-LOIS-QS
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+ ENVIRONMENT: 'dev'
+jobs:
+ SmokeTest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call environment-specific workflow
+        if: env.ENVIRONMENT == 'dev'
+        uses: ./.github/workflows/reusableworkflow.yml
+      - name: Job Done
+        run: echo "Done"
