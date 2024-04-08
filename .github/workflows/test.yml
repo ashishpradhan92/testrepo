@@ -8,10 +8,11 @@ env:
  ENVIRONMENT: 'dev'
 jobs:
  SmokeTest:
+    if: env.ENVIRONMENT == 'dev'
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Call environment-specific workflow
-        if: env.ENVIRONMENT == 'dev'
         uses: ./.github/workflows/reusableworkflow.yml
       - name: Job Done
         run: echo "Done"
