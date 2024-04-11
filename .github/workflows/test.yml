@@ -10,7 +10,7 @@ jobs:
  SmokeTest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Call environment-specific workflow
         if: env.ENVIRONMENT == 'dev'
         uses: ./.github/workflows/reusableworkflow.yml
